@@ -1,9 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import ToggleButtonStyle from './styles';
 
 const ToggleButton: React.FC = () => {
-  return <div />;
+  return (
+    <ToggleButtonStyle>
+      <span />
+    </ToggleButtonStyle>
+  )
 }
 
 export default ToggleButton;

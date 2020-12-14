@@ -17,22 +17,87 @@ const CharacterList: React.FC = () => {
         <div>
           <button>
             <img src={HeroIcon} alt='Ordenar por nome - A/Z' title='Ordenar por nome - A/Z' />
-            <p>Ordenar por nome - A/Z</p>
+            <span>Ordenar por nome - A/Z</span>
           </button>
-          <ToggleButton />
+          <div>
+            <ToggleButton />
+          </div>
           <button>
             <img src={HeartIcon} alt='Somente favoritos' title='Somente favoritos' />
-            <p>Somente favoritos</p>
+            <span>Somente favoritos</span>
           </button>
         </div>
       </TopBar>
       <List>
         <Character>
           <figure>
-            <img src='https://s3.amazonaws.com/uifaces/faces/twitter/geran7/128.jpg' alt=''/>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
           </figure>
           <div>
-            <h3>Star-Lord</h3>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
+            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+          </div>
+        </Character>
+        <Character>
+          <figure>
+            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+          </figure>
+          <div>
+            <h3>Spider-Man</h3>
             <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
           </div>
         </Character>

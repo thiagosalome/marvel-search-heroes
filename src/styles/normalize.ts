@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /**
