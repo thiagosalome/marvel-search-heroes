@@ -1,5 +1,7 @@
-14/12/2020
+13/12/2020
   ✔ Montagem do Protótipo no Figma @done (12/13/2020, 4:44:19 PM)
+
+14/12/2020
   ✔ Desenvolvimento das telas @done (12/14/2020, 9:08:04 PM)
     ✔ Desktop @done (12/14/2020, 9:08:05 PM)
     ✔ Mobile @done (12/14/2020, 9:08:05 PM)
@@ -7,8 +9,8 @@
 15/12/2020
   ☐ Desenvolvimento dos Requisitos Funcionais (Parte 1)
     ☐ Página de listagem de personagens (home)
-      ☐ Exibir os 20 primeiros resultados da API
-      ☐ Permitir ordenação por nome do personagem
+      ✔ Exibir os 20 primeiros resultados da API @done (12/15/2020, 6:55:07 AM)
+      ✔ Permitir ordenação por nome do personagem @done (12/15/2020, 7:45:08 AM)
       ☐ Permitir filtrar por nome, pelo campo de busca
       ☐ Permitir mostrar apenas os personagens favoritos
       ☐ Permitir o usuário favoritar/desfavoritar até 5 personagens

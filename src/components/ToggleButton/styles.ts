@@ -1,7 +1,11 @@
-import { red } from "src/styles/colors";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { red, white } from "src/styles/colors";
 
-export default styled.button`
+type ToggleButtonStyleProps = {
+  active: boolean;
+}
+
+export default styled.button<ToggleButtonStyleProps>`
   height: 40px;
   width: 70px;
   border-radius: 20px;
@@ -16,11 +20,24 @@ export default styled.button`
     height: 20px;
     width: 20px;
     position: absolute;
-    right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: ${red[500]};
-    box-shadow: 0px 3px 8px rgba(225, 0, 0, 0.603748);
     border-radius: 100%;
+    transition: all 0.5s ease-in-out;
+
+    ${(props: ToggleButtonStyleProps) => {
+      if (props.active) {
+        return css`
+          left: 40px;
+          background-color: ${red[500]};
+          box-shadow: 0px 3px 8px rgba(225, 0, 0, 0.603748);
+        `
+      } else {
+        return css`
+          left: 10px;
+          background-color: ${white};
+        `
+      }
+    }}
   }
 `

@@ -2,9 +2,14 @@ import React from 'react';
 
 import ToggleButtonStyle from './styles';
 
-const ToggleButton: React.FC = () => {
+type ToggleButtonProps = {
+  active: boolean;
+  onClick: () => void
+}
+
+const ToggleButton: React.FC<ToggleButtonProps> = ({ onClick, active }: ToggleButtonProps) => {
   return (
-    <ToggleButtonStyle>
+    <ToggleButtonStyle onClick={onClick} active={active}>
       <span />
     </ToggleButtonStyle>
   )
