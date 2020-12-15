@@ -1,10 +1,10 @@
-13/12/2020
-  ✔ Montagem do Protótipo no Figma @done (12/13/2020, 4:44:19 PM)
-  ☐ Desenvolvimento das telas
-    ☐ Desktop
-    ☐ Mobile
-
 14/12/2020
+  ✔ Montagem do Protótipo no Figma @done (12/13/2020, 4:44:19 PM)
+  ✔ Desenvolvimento das telas @done (12/14/2020, 9:08:04 PM)
+    ✔ Desktop @done (12/14/2020, 9:08:05 PM)
+    ✔ Mobile @done (12/14/2020, 9:08:05 PM)
+
+15/12/2020
   ☐ Desenvolvimento dos Requisitos Funcionais (Parte 1)
     ☐ Página de listagem de personagens (home)
       ☐ Exibir os 20 primeiros resultados da API
@@ -13,23 +13,24 @@
       ☐ Permitir mostrar apenas os personagens favoritos
       ☐ Permitir o usuário favoritar/desfavoritar até 5 personagens
 
-15/12/2020
+16/12/2020
   ☐ Desenvolvimento dos Requisitos Funcionais (Parte 2)
     ☐ Página de detalhe do personagem:
       ☐ Exibir dados do personagem
       ☐ Exibir últimos 10 quadrinhos lançados deste personagem
       ☐ Permitir o usuário favoritar/desfavoritar (dentro do limite de 5).
 
-16/12/2020
+17/12/2020
   ☐ Desenvolvimento de Requisitos Bônus
     ☐ Adicionar paginação a listagem para exibir além dos 20 personagens iniciais
     ☐ Persistir os dados de favoritos (para manter os dados após o reload da página)
-    ☐ Layout responsivo
+    ✔ Layout responsivo @done (12/14/2020, 9:09:50 PM)
     ☐ Utilização de ES6+
     ☐ Utilização de ferramentas para garantir a qualidade do código
 
-17/12/2020
+18/12/2020
   ☐ Desenvolvimento de Requisitos Bônus
     ☐ Teste e2e
     ☐ CI/CD
   ☐ Disponibilizar projeto em uma URL pública
+  ☐ Montar documentação
