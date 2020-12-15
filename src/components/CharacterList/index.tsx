@@ -7,11 +7,11 @@ import HeartOutlineIcon from 'src/images/icons/heart-outline.svg'
 import ToggleButton from '../ToggleButton';
 
 // Styles
-import { Container, TopBar, List, Character } from './styles';
+import { TopBar, List, Character } from './styles';
 
 const CharacterList: React.FC = () => {
   return (
-    <Container>
+    <>
       <TopBar>
         <p>Encontrados 20 heróis</p>
         <div>
@@ -29,80 +29,21 @@ const CharacterList: React.FC = () => {
         </div>
       </TopBar>
       <List>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
-        <Character>
-          <figure>
-            <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
-          </figure>
-          <div>
-            <h3>Spider-Man</h3>
-            <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-          </div>
-        </Character>
+        {
+          new Array(8).fill('').map(() => (
+            <Character to='/character'>
+              <figure>
+                <img src='https://storage.googleapis.com/dystribute-media/Tdw6fnuXliHtBSMaOGHj.jpg' alt=''/>
+              </figure>
+              <div>
+                <h3>Spider-Man</h3>
+                <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
+              </div>
+            </Character>
+          ))
+        }
       </List>
-    </Container>
+    </>
   )
 }
 

@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { gray, red, white } from 'src/styles/colors';
 import breakpoints from 'src/styles/breakpoints';
-
-export const Container = styled.div`
-  
-`;
 
 export const TopBar = styled.div`
   display: flex;
@@ -77,8 +74,9 @@ export const List = styled.div`
   }
 `
 
-export const Character = styled.a`
+export const Character = styled(Link)`
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
 

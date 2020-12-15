@@ -4,15 +4,15 @@ import React from 'react';
 import SearchIcon from 'src/images/icons/search.svg'
 
 // Styles
-import SearchStyle from './styles'
+import InternalSearchStyle from './styles'
 
-const Search: React.FC = () => {
+const InternalSearch: React.FC = () => {
   return (
-    <SearchStyle>
+    <InternalSearchStyle>
       <span><img src={SearchIcon} alt=''/></span>
       <input type='text' placeholder='Procure por heróis'/>
-    </SearchStyle>
+    </InternalSearchStyle>
   )
 }
 
-export default Search;
+export default InternalSearch;

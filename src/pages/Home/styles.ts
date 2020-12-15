@@ -21,17 +21,18 @@ export const Header = styled.header`
         max-width: 160px;
       }
     }
+
+    span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+    }
   }
 
   
-  span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-  }
 `;
 
 export const SubHeader = styled.div`
