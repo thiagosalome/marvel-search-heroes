@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 // Assets
 import SearchIcon from 'src/images/icons/search.svg'
@@ -6,11 +6,15 @@ import SearchIcon from 'src/images/icons/search.svg'
 // Styles
 import MainSearchStyle from './styles'
 
-const MainSearch: React.FC = () => {
+type MainSearchProps = {
+  onChange: (evt: ChangeEvent<HTMLInputElement>) => void
+}
+
+const MainSearch: React.FC<MainSearchProps> = ({ onChange }: MainSearchProps) => {
   return (
     <MainSearchStyle>
-      <span><img src={SearchIcon} alt=''/></span>
-      <input type='text' placeholder='Procure por heróis'/>
+      <span><img src={SearchIcon} alt='Buscar' title='Buscar'/></span>
+      <input onChange={onChange} type='text' placeholder='Procure por heróis (Digite pelo menos 3 caracteres)'/>
     </MainSearchStyle>
   )
 }

@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+
+// Components
+import MainSearch from 'src/components/MainSearch';
 
 // Assets
 import HeroIcon from 'src/images/icons/hero.svg'
@@ -24,6 +27,7 @@ interface CharacterProps {
 
 const CharacterList: React.FC = () => {
   const imageVariant = 'standard_fantastic' // 250 x 250
+  const [ nameStartsWith, setNameStartsWith ] = useState('')
   const [ limit, setLimit ] = useState(20)
   const [ total, setTotal ] = useState(0)
   const [ orderBy, setOrderBy ] = useState('-modified')
@@ -34,7 +38,8 @@ const CharacterList: React.FC = () => {
       const { data } = await api.get('/characters', {
         params: {
           limit,
-          orderBy
+          orderBy,
+          nameStartsWith: nameStartsWith ? nameStartsWith : null
         }
       })
       setTotal(data.data.total)
@@ -42,18 +47,28 @@ const CharacterList: React.FC = () => {
     }
 
     getCharacters()
-  }, [ limit, orderBy ])
-
-  if (!characters) {
-    return <p>Carregando...</p>
-  }
+  }, [ limit, orderBy, nameStartsWith ])
 
   function handleOrderBy() {
     setOrderBy(orderBy === '-modified' ? 'name' : '-modified')
   }
 
+  function handleSearch(evt: ChangeEvent<HTMLInputElement>) {
+    const { value } = evt.target
+    if (value.length >= 3) {
+      setNameStartsWith(value)
+    } else {
+      setNameStartsWith('')
+    }
+  }
+
+  if (!characters) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <>
+      <MainSearch onChange={handleSearch} />
       <TopBar>
         <p>Encontrados {total} heróis</p>
         <div>

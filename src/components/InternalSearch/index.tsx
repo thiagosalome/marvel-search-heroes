@@ -9,7 +9,7 @@ import InternalSearchStyle from './styles'
 const InternalSearch: React.FC = () => {
   return (
     <InternalSearchStyle>
-      <span><img src={SearchIcon} alt=''/></span>
+      <span><img src={SearchIcon} alt='Buscar' title='Buscar'/></span>
       <input type='text' placeholder='Procure por heróis'/>
     </InternalSearchStyle>
   )

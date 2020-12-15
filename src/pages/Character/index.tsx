@@ -37,7 +37,7 @@ const Character: React.FC = () => {
             <Info>
               <header>
                 <h2>Hulk</h2>
-                <button><img src={HeartIcon} alt=''/></button>
+                <button><img src={HeartIcon} alt='Favoritar' title='Desfavoritar'/></button>
               </header>
               <ImageCharacter screen='mobile' src={HulkImage} />
               <p>O Hulk, por vezes referido como O Incrível Hulk é um personagem de quadrinhos/banda desenhada do gênero super-herói, propriedade da Marvel Comics, editora pela qual as histórias do personagem são publicados desde sua criação, nos anos 1960</p>

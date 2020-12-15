@@ -11,9 +11,9 @@
     ☐ Página de listagem de personagens (home)
       ✔ Exibir os 20 primeiros resultados da API @done (12/15/2020, 6:55:07 AM)
       ✔ Permitir ordenação por nome do personagem @done (12/15/2020, 7:45:08 AM)
-      ☐ Permitir filtrar por nome, pelo campo de busca
-      ☐ Permitir mostrar apenas os personagens favoritos
+      ✔ Permitir filtrar por nome, pelo campo de busca @done (12/15/2020, 8:19:58 AM)
       ☐ Permitir o usuário favoritar/desfavoritar até 5 personagens
+      ☐ Permitir mostrar apenas os personagens favoritos
 
 16/12/2020
   ☐ Desenvolvimento dos Requisitos Funcionais (Parte 2)
@@ -29,6 +29,9 @@
     ✔ Layout responsivo @done (12/14/2020, 9:09:50 PM)
     ☐ Utilização de ES6+
     ☐ Utilização de ferramentas para garantir a qualidade do código
+  
+  ☐ Outros Requisitos Bônus
+    ☐ Adicionar Skeleton
 
 18/12/2020
   ☐ Desenvolvimento de Requisitos Bônus

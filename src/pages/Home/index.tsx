@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 // Components
 import CharacterList from 'src/components/CharacterList';
-import MainSearch from 'src/components/MainSearch';
 import Footer from 'src/components/Footer';
 
 // Assets
@@ -32,7 +31,6 @@ const Home: React.FC = () => {
             <h2>Explore o universo</h2>
             <p>Mergulhe no domínio deslumbrante de todos personagens clássicos que você ama - e aqueles que você descobrirá em breve!</p>
           </SubHeader>
-          <MainSearch />
           <CharacterList />
         </Container>
       </main>
