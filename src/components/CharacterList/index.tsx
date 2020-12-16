@@ -2,36 +2,31 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 
 // Components
 import MainSearch from 'src/components/MainSearch';
+import CharacterItem from './CharacterItem';
 
 // Assets
 import HeroIcon from 'src/images/icons/hero.svg'
 import HeartIcon from 'src/images/icons/heart.svg'
-import HeartOutlineIcon from 'src/images/icons/heart-outline.svg'
-import ToggleButton from '../ToggleButton';
 
 // Config
 import api from 'src/config/api';
 
-// Styles
-import { TopBar, List, Character } from './styles';
+// Types
+import { CharacterProps } from './types'
 
-interface CharacterProps {
-  id: number;
-  name: string;
-  description: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  }
-}
+// Styles
+import { TopBar, List, OrderBySelect, FavoritesButton, Toggle } from './styles';
+
 
 const CharacterList: React.FC = () => {
-  const imageVariant = 'standard_fantastic' // 250 x 250
+  let content
   const [ nameStartsWith, setNameStartsWith ] = useState('')
   const [ limit, setLimit ] = useState(20)
   const [ total, setTotal ] = useState(0)
   const [ orderBy, setOrderBy ] = useState('-modified')
-  const [ characters, setCharacters ] = useState([])
+  const [ characters, setCharacters ] = useState<CharacterProps[]>([])
+  const [ favorites, setFavorites ] = useState<CharacterProps[]>([])
+  const [ showFavorites, setShowFavorites ] = useState(false)
 
   useEffect(() => {
     async function getCharacters() {
@@ -49,8 +44,12 @@ const CharacterList: React.FC = () => {
     getCharacters()
   }, [ limit, orderBy, nameStartsWith ])
 
-  function handleOrderBy() {
-    setOrderBy(orderBy === '-modified' ? 'name' : '-modified')
+  function handleOrderBy(evt: ChangeEvent<HTMLSelectElement>) {
+    setOrderBy(evt.target.value)
+  }
+
+  function toggleFavorites() {
+    setShowFavorites(!showFavorites)
   }
 
   function handleSearch(evt: ChangeEvent<HTMLInputElement>) {
@@ -60,6 +59,24 @@ const CharacterList: React.FC = () => {
     } else {
       setNameStartsWith('')
     }
+  }
+
+  if (showFavorites) {
+    if (favorites.length > 0) {
+      content = (
+        favorites.map((character: CharacterProps) => (
+          <CharacterItem key={character.id} character={character} favorites={favorites} setFavorites={setFavorites} />
+        ))
+      )
+    } else {
+      content = <p>Você ainda não possui favoritos</p>
+    }
+  } else {
+    content = (
+      characters.map((character: CharacterProps) => (
+        <CharacterItem key={character.id} character={character} favorites={favorites} setFavorites={setFavorites} />
+      ))
+    )
   }
 
   if (!characters) {
@@ -72,33 +89,24 @@ const CharacterList: React.FC = () => {
       <TopBar>
         <p>Encontrados {total} heróis</p>
         <div>
-          <button onClick={handleOrderBy}>
+          <OrderBySelect>
             <img src={HeroIcon} alt='Ordenar por nome - A/Z' title='Ordenar por nome - A/Z' />
-            <span>Ordenar por nome - A/Z</span>
-          </button>
-          <div>
-            <ToggleButton active={orderBy === 'name'} onClick={handleOrderBy} />
-          </div>
-          <button>
+            <select onChange={handleOrderBy} name='order-by'>
+              <option value='-modified'>Ordenar por modificação (Dec.)</option>
+              <option value='modified'>Ordenar por modificação (Cres.)</option>
+              <option value='-name'>Ordenar por nome (Dec.)</option>
+              <option value='name'>Ordenar por nome (Cres.)</option>
+            </select>
+          </OrderBySelect>
+          <FavoritesButton onClick={toggleFavorites}>
+            <Toggle active={showFavorites} />
             <img src={HeartIcon} alt='Somente favoritos' title='Somente favoritos' />
             <span>Somente favoritos</span>
-          </button>
+          </FavoritesButton>
         </div>
       </TopBar>
       <List>
-        {
-          characters.map((character: CharacterProps) => (
-            <Character key={character.id} to='/character'>
-              <figure>
-                <img src={`${character.thumbnail.path}/${imageVariant}.${character.thumbnail.extension}`} alt={character.name} />
-              </figure>
-              <div>
-                <h3>{character.name}</h3>
-                <button><img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' /></button>
-              </div>
-            </Character>
-          ))
-        }
+        {content}
       </List>
     </>
   )
