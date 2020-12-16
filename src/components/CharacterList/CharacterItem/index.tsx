@@ -39,7 +39,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, set
         <h3>{character.name}</h3>
         <button onClick={() => handleFavorite(character)}>
           {
-            favorites.includes(character)
+            favorites.find((favoriteItem: CharacterProps) => favoriteItem.id === character.id)
               ? <img src={HeartIcon} alt='Desfavoritar' title='Desfavoritar' />
               : <img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' />
           }

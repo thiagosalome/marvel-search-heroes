@@ -8,6 +8,9 @@ import CharacterItem from './CharacterItem';
 import HeroIcon from 'src/images/icons/hero.svg'
 import HeartIcon from 'src/images/icons/heart.svg'
 
+// Hooks
+import useLocalStorage from 'src/hooks/useLocalStorage';
+
 // Config
 import api from 'src/config/api';
 
@@ -20,12 +23,12 @@ import { TopBar, List, OrderBySelect, FavoritesButton, Toggle } from './styles';
 
 const CharacterList: React.FC = () => {
   let content
+  const limit = 20
   const [ nameStartsWith, setNameStartsWith ] = useState('')
-  const [ limit, setLimit ] = useState(20)
   const [ total, setTotal ] = useState(0)
   const [ orderBy, setOrderBy ] = useState('-modified')
   const [ characters, setCharacters ] = useState<CharacterProps[]>([])
-  const [ favorites, setFavorites ] = useState<CharacterProps[]>([])
+  const [ favorites, setFavorites ] = useLocalStorage<CharacterProps[]>('@msh/favorites', [])
   const [ showFavorites, setShowFavorites ] = useState(false)
 
   useEffect(() => {
@@ -64,8 +67,8 @@ const CharacterList: React.FC = () => {
   if (showFavorites) {
     if (favorites.length > 0) {
       content = (
-        favorites.map((character: CharacterProps) => (
-          <CharacterItem key={character.id} character={character} favorites={favorites} setFavorites={setFavorites} />
+        (favorites as CharacterProps[]).map((character: CharacterProps) => (
+          <CharacterItem key={character.id} character={character} favorites={favorites as CharacterProps[]} setFavorites={setFavorites as (value: CharacterProps[]) => void} />
         ))
       )
     } else {
@@ -74,7 +77,7 @@ const CharacterList: React.FC = () => {
   } else {
     content = (
       characters.map((character: CharacterProps) => (
-        <CharacterItem key={character.id} character={character} favorites={favorites} setFavorites={setFavorites} />
+        <CharacterItem key={character.id} character={character} favorites={favorites as CharacterProps[]} setFavorites={setFavorites as (value: CharacterProps[]) => void} />
       ))
     )
   }
@@ -83,6 +86,7 @@ const CharacterList: React.FC = () => {
     return <p>Carregando...</p>
   }
 
+  console.log('favorites', favorites)
   return (
     <>
       <MainSearch onChange={handleSearch} />

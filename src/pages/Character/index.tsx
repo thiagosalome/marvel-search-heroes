@@ -7,7 +7,7 @@ import ComicList from 'src/components/ComicList';
 import Footer from 'src/components/Footer';
 
 // Assets
-import Logo from 'src/images/logo.png'
+import Logo from 'src/images/logo.svg'
 import HeartIcon from 'src/images/icons/heart.svg'
 import ComicIcon from 'src/images/icons/comic.svg'
 import MoviesIcon from 'src/images/icons/movies.svg'

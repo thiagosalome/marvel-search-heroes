@@ -6,7 +6,7 @@ import CharacterList from 'src/components/CharacterList';
 import Footer from 'src/components/Footer';
 
 // Assets
-import Logo from 'src/images/logo.png'
+import Logo from 'src/images/logo.svg'
 
 // Styles
 import { Header, SubHeader } from './styles'

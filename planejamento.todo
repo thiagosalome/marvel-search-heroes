@@ -25,7 +25,7 @@
 17/12/2020
   ☐ Desenvolvimento de Requisitos Bônus
     ☐ Adicionar paginação a listagem para exibir além dos 20 personagens iniciais
-    ☐ Persistir os dados de favoritos (para manter os dados após o reload da página)
+    ✔ Persistir os dados de favoritos (para manter os dados após o reload da página) @done (12/15/2020, 10:06:08 PM)
     ✔ Layout responsivo @done (12/14/2020, 9:09:50 PM)
     ☐ Utilização de ES6+
     ☐ Utilização de ferramentas para garantir a qualidade do código

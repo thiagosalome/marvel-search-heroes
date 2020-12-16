@@ -3,7 +3,7 @@ import { gray } from 'src/styles/colors';
 import breakpoints from 'src/styles/breakpoints';
 
 export const Header = styled.header`
-  padding: 35px 0 20px;
+  padding: 35px 0 40px;
 
   @media (max-width: ${breakpoints.sm}) {
     padding: 25px 0 20px;
@@ -15,6 +15,7 @@ export const Header = styled.header`
     img {
       display: block;
       margin: 0 auto;
+      width: 100%;
       max-width: 330px;
 
       @media (max-width: ${breakpoints.sm}) {
