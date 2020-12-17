@@ -20,10 +20,11 @@
     ☐ Página de detalhe do personagem:
       ✔ Exibir dados do personagem @done (12/16/2020, 11:34:12 PM)
       ✔ Exibir últimos 10 quadrinhos lançados deste personagem @done (12/16/2020, 10:36:47 PM)
-      ☐ Permitir o usuário favoritar/desfavoritar (dentro do limite de 5).
-      ☐ Montar Busca interna
+      ✔ Permitir o usuário favoritar/desfavoritar (dentro do limite de 5). @done (12/17/2020, 12:43:28 AM)
 
 17/12/2020
+  ☐ Desenvolvimento dos Requisitos Funcionais (Parte 2)
+    ☐ Montar Busca interna
   ☐ Desenvolvimento de Requisitos Bônus
     ☐ Adicionar paginação a listagem para exibir além dos 20 personagens iniciais
     ✔ Persistir os dados de favoritos (para manter os dados após o reload da página) @done (12/15/2020, 10:06:08 PM)
@@ -32,7 +33,8 @@
     ☐ Utilização de ferramentas para garantir a qualidade do código
   
   ☐ Outros Requisitos Bônus
-    ☐ Adicionar Skeleton
+    ☐ Adicionar Loading
+    ☐ Adicionar mensagem de limite máximo de 5 favoritos
 
 18/12/2020
   ☐ Desenvolvimento de Requisitos Bônus

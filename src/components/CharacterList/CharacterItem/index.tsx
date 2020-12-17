@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 // Assets
@@ -18,9 +18,12 @@ type CharacterItemProps = {
 }
 
 const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, setFavorites }: CharacterItemProps) => {
+  const isFavored = useMemo(() => (
+    favorites.find((favoriteItem: CharacterProps) => favoriteItem.id === character.id)
+  ), [ favorites, character.id ])  
 
   function handleFavorite(character: CharacterProps) {
-    if (favorites.includes(character)) {
+    if (isFavored) {
       const filteredFavorites = favorites.filter((favorite: CharacterProps) => favorite.id !== character.id)
       setFavorites(filteredFavorites)
     } else {
@@ -44,7 +47,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, set
         <h3>{character.name}</h3>
         <button onClick={() => handleFavorite(character)}>
           {
-            favorites.find((favoriteItem: CharacterProps) => favoriteItem.id === character.id)
+            isFavored
               ? <img src={HeartIcon} alt='Desfavoritar' title='Desfavoritar' />
               : <img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' />
           }

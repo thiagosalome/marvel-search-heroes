@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 
 // Components
 import MainSearch from 'src/components/MainSearch';
@@ -8,8 +8,8 @@ import CharacterItem from './CharacterItem';
 import HeroIcon from 'src/images/icons/hero.svg'
 import HeartIcon from 'src/images/icons/heart.svg'
 
-// Hooks
-import useLocalStorage from 'src/hooks/useLocalStorage';
+// Contexts
+import FavoritesContext from 'src/contexts/FavoritesContext';
 
 // Config
 import api from 'src/config/api';
@@ -28,8 +28,8 @@ const CharacterList: React.FC = () => {
   const [ total, setTotal ] = useState(0)
   const [ orderBy, setOrderBy ] = useState('-modified')
   const [ characters, setCharacters ] = useState<CharacterProps[]>([])
-  const [ favorites, setFavorites ] = useLocalStorage<CharacterProps[]>('@msh/favorites', [])
   const [ showFavorites, setShowFavorites ] = useState(false)
+  const { favorites, setFavorites } = useContext(FavoritesContext)
 
   useEffect(() => {
     async function getCharacters() {
@@ -67,8 +67,8 @@ const CharacterList: React.FC = () => {
   if (showFavorites) {
     if (favorites.length > 0) {
       content = (
-        (favorites as CharacterProps[]).map((character: CharacterProps) => (
-          <CharacterItem key={character.id} character={character} favorites={favorites as CharacterProps[]} setFavorites={setFavorites as (value: CharacterProps[]) => void} />
+        favorites.map((character: CharacterProps) => (
+          <CharacterItem key={character.id} character={character} favorites={favorites} setFavorites={setFavorites as (value: CharacterProps[]) => void} />
         ))
       )
     } else {
@@ -77,7 +77,7 @@ const CharacterList: React.FC = () => {
   } else {
     content = (
       characters.map((character: CharacterProps) => (
-        <CharacterItem key={character.id} character={character} favorites={favorites as CharacterProps[]} setFavorites={setFavorites as (value: CharacterProps[]) => void} />
+        <CharacterItem key={character.id} character={character} favorites={favorites} setFavorites={setFavorites as (value: CharacterProps[]) => void} />
       ))
     )
   }

@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useRef, useState, SyntheticEvent } from 'react';
+import React, { useEffect, useState, SyntheticEvent, useContext, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import ColorThief from 'colorthief'
 import { format, parseISO } from 'date-fns'
@@ -8,6 +8,10 @@ import { ptBR } from 'date-fns/locale'
 import InternalSearch from 'src/components/InternalSearch';
 import ComicList from 'src/components/ComicList';
 import Footer from 'src/components/Footer';
+
+// Contexts
+import FavoritesContext from 'src/contexts/FavoritesContext';
+import HeartOutlineIcon from 'src/images/icons/heart-outline.svg'
 
 // Assets
 import Logo from 'src/images/logo.svg'
@@ -31,11 +35,14 @@ type ParamsProps = {
 }
 
 const Character: React.FC = () => {
-  const imageRef = useRef<HTMLImageElement>()
   const { id } = useParams<ParamsProps>()
   const [ character, setCharacter ] = useState<CharacterProps>()
   const [ comics, setComics ] = useState<ComicProps[]>()
   const [ backgroundColor, setBackgroundColor ] = useState<string>()
+  const { favorites, setFavorites } = useContext(FavoritesContext)
+  const isFavored = useMemo(() => (
+    favorites.find((favoriteItem: CharacterProps) => favoriteItem.id === character?.id)
+  ), [ favorites, character ])  
 
   useEffect(() => {
     function generateRandomRating () {
@@ -59,18 +66,28 @@ const Character: React.FC = () => {
   }, [id])
 
   function handleLoadImage(evt: SyntheticEvent<HTMLImageElement, Event>) {
-    if (character) {
-      const colorThief = new ColorThief()
-      const result = colorThief.getColor(evt.target, 25);
-      setBackgroundColor(`rgba(${(result.join(','))}, 0.3)`)
+    const colorThief = new ColorThief()
+    const result = colorThief.getColor(evt.target, 25);
+    setBackgroundColor(`rgba(${(result.join(','))}, 0.3)`)
+  }
+
+  function handleFavorite(character: CharacterProps) {
+    if (isFavored) {
+      const filteredFavorites = favorites.filter((favorite: CharacterProps) => favorite.id !== character.id)
+      setFavorites(filteredFavorites)
+    } else {
+      if (favorites.length < 5) {
+        setFavorites([
+          ...favorites,
+          character
+        ])
+      }
     }
   }
 
   if (!character || !comics) {
     return <p>Carregando...</p>
   }
-
-  console.log('rating', character.rating)
 
   return (
     <Wrapper backgroundColor={backgroundColor}>
@@ -91,12 +108,17 @@ const Character: React.FC = () => {
             <Info>
               <header>
                 <h2>{character.name}</h2>
-                <button><img src={HeartIcon} alt='Favoritar' title='Desfavoritar'/></button>
+                <button onClick={() => handleFavorite(character)}>
+                  {
+                    isFavored
+                      ? <img src={HeartIcon} alt='Desfavoritar' title='Desfavoritar' />
+                      : <img src={HeartOutlineIcon} alt='Favoritar' title='Favoritar' />
+                  }
+                </button>
               </header>
               <ImageCharacter
                 screen='mobile'
                 crossOrigin={"anonymous"}
-                ref={imageRef as RefObject<HTMLImageElement>}
                 src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
                 onLoad={handleLoadImage}
               />
@@ -128,7 +150,6 @@ const Character: React.FC = () => {
             </Info>
             <ImageCharacter
               crossOrigin={"anonymous"}
-              ref={imageRef as RefObject<HTMLImageElement>}
               screen='desktop'
               src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
               onLoad={handleLoadImage}
