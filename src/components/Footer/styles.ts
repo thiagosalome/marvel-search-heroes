@@ -10,7 +10,7 @@ export default styled.footer`
   align-items: center;
   justify-content: center;
   color: ${white};
-  margin-top: 50px;
+  margin-top: auto;
 
   @media (max-width: ${breakpoints.sm}) {
     height: 55px;

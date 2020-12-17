@@ -9,12 +9,12 @@ import Footer from 'src/components/Footer';
 import Logo from 'src/images/logo.svg'
 
 // Styles
-import { Header, SubHeader } from './styles'
+import { Wrapper, Header, SubHeader } from './styles'
 import { Container } from 'src/styles/grid';
 
 const Home: React.FC = () => {
   return (
-    <>
+    <Wrapper>
       <Header>
         <Container>
           <h1>
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
         </Container>
       </main>
       <Footer />
-    </>
+    </Wrapper>
   )
 }
 

@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { gray } from 'src/styles/colors';
 import breakpoints from 'src/styles/breakpoints';
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
 export const Header = styled.header`
   padding: 35px 0 40px;
 

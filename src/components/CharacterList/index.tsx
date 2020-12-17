@@ -3,6 +3,7 @@ import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 // Components
 import MainSearch from 'src/components/MainSearch';
 import CharacterItem from './CharacterItem';
+import Loading from 'src/components/Loading';
 
 // Assets
 import HeroIcon from 'src/images/icons/hero.svg'
@@ -82,8 +83,8 @@ const CharacterList: React.FC = () => {
     )
   }
 
-  if (!characters) {
-    return <p>Carregando...</p>
+  if (!characters.length) {
+    return <Loading message='Buscando heróis... Aguarde um momento' />
   }
 
   return (

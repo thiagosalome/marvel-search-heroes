@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent, useRef, FocusEvent, useMemo, MouseEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, useRef, useMemo, MouseEvent } from 'react';
 import { useHistory } from 'react-router-dom'
 
 // Types

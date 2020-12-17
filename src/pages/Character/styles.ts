@@ -10,6 +10,10 @@ type WrapperStyleProps = {
 export const Wrapper = styled.div<WrapperStyleProps>`
   background-color: ${(props: WrapperStyleProps) => props.backgroundColor ? props.backgroundColor : white};
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 export const Header = styled.header`

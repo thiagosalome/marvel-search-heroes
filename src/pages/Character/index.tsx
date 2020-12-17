@@ -8,14 +8,15 @@ import { ptBR } from 'date-fns/locale'
 import InternalSearch from 'src/components/InternalSearch';
 import ComicList from 'src/components/ComicList';
 import Footer from 'src/components/Footer';
+import Loading from 'src/components/Loading';
 
 // Contexts
 import FavoritesContext from 'src/contexts/FavoritesContext';
-import HeartOutlineIcon from 'src/images/icons/heart-outline.svg'
 
 // Assets
 import Logo from 'src/images/logo.svg'
 import HeartIcon from 'src/images/icons/heart.svg'
+import HeartOutlineIcon from 'src/images/icons/heart-outline.svg'
 import ComicIcon from 'src/images/icons/comic.svg'
 import MoviesIcon from 'src/images/icons/movies.svg'
 
@@ -86,7 +87,11 @@ const Character: React.FC = () => {
   }
 
   if (!character || !comics) {
-    return <p>Carregando...</p>
+    return (
+      <Wrapper backgroundColor={backgroundColor}>
+        <Loading message="Carregando dados do personagem..." />
+      </Wrapper>
+    )
   }
 
   return (
