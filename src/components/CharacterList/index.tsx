@@ -12,7 +12,7 @@ import HeartIcon from 'src/images/icons/heart.svg'
 import FavoritesContext from 'src/contexts/FavoritesContext';
 
 // Config
-import api from 'src/config/api';
+import api from 'src/services/api';
 
 // Types
 import { CharacterProps } from 'src/types/Character'

@@ -20,7 +20,7 @@ import ComicIcon from 'src/images/icons/comic.svg'
 import MoviesIcon from 'src/images/icons/movies.svg'
 
 // Config
-import api from 'src/config/api';
+import api from 'src/services/api';
 
 // Types
 import { CharacterProps } from 'src/types/Character';
@@ -142,10 +142,14 @@ const Character: React.FC = () => {
                   <p>Rating:</p>
                   <span style={{ backgroundImage: `linear-gradient(90deg, rgb(255, 21, 16) ${character.rating}%, rgb(255, 255, 255) ${100 - character.rating}%)`, WebkitTextFillColor: 'transparent' }}>★★★★★</span>
                 </InfoRating>
-                <InfoLast>
-                  <p>Último quadrinho</p>
-                  <span>{format(parseISO(comics[0].dates[0].date), "d MMM'.' yyyy", { locale: ptBR })}</span>
-                </InfoLast>
+                {
+                  comics.length > 0 && (
+                    <InfoLast>
+                      <p>Último quadrinho</p>
+                      <span>{format(parseISO(comics[0].dates[0].date), "d MMM'.' yyyy", { locale: ptBR })}</span>
+                    </InfoLast>
+                  )
+                }
               </div>
             </Info>
             <ImageCharacter

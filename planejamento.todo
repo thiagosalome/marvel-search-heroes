@@ -7,8 +7,8 @@
     ✔ Mobile @done (12/14/2020, 9:08:05 PM)
 
 15/12/2020
-  ☐ Desenvolvimento dos Requisitos Funcionais (Parte 1)
-    ☐ Página de listagem de personagens (home)
+  ✔ Desenvolvimento dos Requisitos Funcionais (Parte 1) @done (12/15/2020, 6:55:07 AM)
+    ✔ Página de listagem de personagens (home) @done (12/15/2020, 6:55:07 AM)
       ✔ Exibir os 20 primeiros resultados da API @done (12/15/2020, 6:55:07 AM)
       ✔ Permitir ordenação por nome do personagem @done (12/15/2020, 7:45:08 AM)
       ✔ Permitir filtrar por nome, pelo campo de busca @done (12/15/2020, 8:19:58 AM)
@@ -16,15 +16,15 @@
       ✔ Permitir mostrar apenas os personagens favoritos @done (12/15/2020, 9:13:44 PM)
 
 16/12/2020
-  ☐ Desenvolvimento dos Requisitos Funcionais (Parte 2)
-    ☐ Página de detalhe do personagem:
+  ✔ Desenvolvimento dos Requisitos Funcionais (Parte 2) @done (12/16/2020, 11:34:12 PM)
+    ✔ Página de detalhe do personagem: @done (12/16/2020, 11:34:12 PM)
       ✔ Exibir dados do personagem @done (12/16/2020, 11:34:12 PM)
       ✔ Exibir últimos 10 quadrinhos lançados deste personagem @done (12/16/2020, 10:36:47 PM)
       ✔ Permitir o usuário favoritar/desfavoritar (dentro do limite de 5). @done (12/17/2020, 12:43:28 AM)
 
 17/12/2020
-  ☐ Desenvolvimento dos Requisitos Funcionais (Parte 2)
-    ☐ Montar Busca interna
+  ✔ Desenvolvimento dos Requisitos Funcionais (Parte 2) @done (12/17/2020, 8:26:50 AM)
+    ✔ Montar Busca interna @done (12/17/2020, 8:26:49 AM)
   ☐ Desenvolvimento de Requisitos Bônus
     ☐ Adicionar paginação a listagem para exibir além dos 20 personagens iniciais
     ✔ Persistir os dados de favoritos (para manter os dados após o reload da página) @done (12/15/2020, 10:06:08 PM)

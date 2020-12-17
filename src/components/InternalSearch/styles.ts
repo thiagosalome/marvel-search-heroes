@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { gray, white } from "src/styles/colors";
+import { gray, red, white } from "src/styles/colors";
 import breakpoints from "src/styles/breakpoints";
 
 export default styled.div`
@@ -10,6 +10,7 @@ export default styled.div`
   width: 100%;
   max-width: 540px;
   margin: 20px 0;
+  position: relative;
 
   span {
     display: flex;
@@ -40,6 +41,47 @@ export default styled.div`
 
     &::placeholder {
       color: ${gray[200]};
+    }
+  }
+
+  div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 45px;
+    background-color: ${white};
+    z-index: 3;
+    height: 220px;
+    border-radius: 10px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2); 
+      border-radius: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+
+      li {
+        
+        a {
+          text-decoration: none;
+          color: ${gray[200]};
+          padding: 5px 10px;
+          display: block;
+
+          &:hover {
+            color: ${red[500]};
+          }
+        }
+      }
     }
   }
 `
