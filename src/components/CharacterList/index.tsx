@@ -4,6 +4,7 @@ import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import MainSearch from 'src/components/MainSearch';
 import CharacterItem from './CharacterItem';
 import Loading from 'src/components/Loading';
+import Pagination from 'src/components/Pagination';
 
 // Assets
 import HeroIcon from 'src/images/icons/hero.svg'
@@ -27,6 +28,7 @@ const CharacterList: React.FC = () => {
   const limit = 20
   const [ nameStartsWith, setNameStartsWith ] = useState('')
   const [ total, setTotal ] = useState(0)
+  const [ offset, setOffset ] = useState(0)
   const [ orderBy, setOrderBy ] = useState('-modified')
   const [ characters, setCharacters ] = useState<CharacterProps[]>([])
   const [ showFavorites, setShowFavorites ] = useState(false)
@@ -36,6 +38,7 @@ const CharacterList: React.FC = () => {
     async function getCharacters() {
       const { data } = await api.get('/characters', {
         params: {
+          offset,
           limit,
           orderBy,
           nameStartsWith: nameStartsWith ? nameStartsWith : null
@@ -46,7 +49,7 @@ const CharacterList: React.FC = () => {
     }
 
     getCharacters()
-  }, [ limit, orderBy, nameStartsWith ])
+  }, [ offset, limit, orderBy, nameStartsWith ])
 
   function handleOrderBy(evt: ChangeEvent<HTMLSelectElement>) {
     setOrderBy(evt.target.value)
@@ -112,6 +115,7 @@ const CharacterList: React.FC = () => {
       <List>
         {content}
       </List>
+      <Pagination numberPages={Math.ceil(total / limit)} limit={limit} setOffset={setOffset} />
     </>
   )
 }
