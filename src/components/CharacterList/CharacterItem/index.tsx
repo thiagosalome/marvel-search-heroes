@@ -6,13 +6,18 @@ import HeartIcon from 'src/images/icons/heart.svg'
 import HeartOutlineIcon from 'src/images/icons/heart-outline.svg'
 
 // Types
-import { CharacterItemProps, CharacterProps } from '../types';
+import { CharacterProps } from 'src/types/Character';
 
 // Styles
 import CharacterItemStyle from './styles';
 
+type CharacterItemProps = {
+  character: CharacterProps;
+  favorites: CharacterProps[];
+  setFavorites: (value: CharacterProps[]) => void;
+}
+
 const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, setFavorites }: CharacterItemProps) => {
-  const imageVariant = 'standard_fantastic' // 250 x 250
 
   function handleFavorite(character: CharacterProps) {
     if (favorites.includes(character)) {
@@ -32,7 +37,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, set
     <CharacterItemStyle>
       <Link to={`/${character.id}`}>
         <figure>
-        <img src={`${character.thumbnail.path}/${imageVariant}.${character.thumbnail.extension}`} alt={character.name} />
+          <img src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}`} alt={character.name} />
         </figure>
       </Link>
       <div>

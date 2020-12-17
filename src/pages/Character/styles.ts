@@ -1,10 +1,15 @@
 import breakpoints from "src/styles/breakpoints";
-import { gray, green, white } from "src/styles/colors";
+import { gray, white } from "src/styles/colors";
 import { Container } from "src/styles/grid";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  background-color: ${green};
+type WrapperStyleProps = {
+  backgroundColor?: string;
+}
+
+export const Wrapper = styled.div<WrapperStyleProps>`
+  background-color: ${(props: WrapperStyleProps) => props.backgroundColor ? props.backgroundColor : white};
+  overflow-x: hidden;
 `
 
 export const Header = styled.header`
@@ -158,17 +163,23 @@ export const InfoLast = styled.div`
 `
 
 export const BackgroundName = styled.p`
-  font-size: 350px;
+  font-size: 250px;
   font-weight: bold;
   color: ${white};
   position: absolute;
   text-transform: uppercase;
   top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  text-align: center;
   margin: 0;
   cursor: default;
   user-select: none;
+  word-break: break-word;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  line-height: 0.9;
+  opacity: 0.5;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 250px;
@@ -188,7 +199,7 @@ export const ImageCharacter = styled.img<ImageCharacterStyleProps>`
   position: absolute;
   z-index: 1;
   max-width: 590px;
-  top: 80px;
+  top: 150px;
   left: 50%;
   transform: translateX(-25%);
   display: ${(props: ImageCharacterStyleProps) => ( props.screen === 'mobile' ? 'none' : 'block' )};
@@ -205,7 +216,7 @@ export const ImageCharacter = styled.img<ImageCharacterStyleProps>`
     left: 0;
     transform: translateX(0);
     max-width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: ${(props: ImageCharacterStyleProps) => ( props.screen === 'desktop' ? 'none' : 'block' )};
   }
 `

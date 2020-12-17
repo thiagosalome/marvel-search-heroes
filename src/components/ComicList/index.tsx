@@ -1,15 +1,23 @@
 import React from 'react';
 
+// Types
+import { ComicProps } from 'src/types/Comic';
+
+// Styles
 import { Container, Comic } from './styles';
 
-const ComicList: React.FC = () => {
+type ComicListProps = {
+  comics: ComicProps[]
+}
+
+const ComicList: React.FC<ComicListProps> = ({ comics }: ComicListProps) => {
   return (
     <Container>
       {
-        new Array(12).fill('').map(() => (
-          <Comic>
-            <img src='https://i.annihil.us/u/prod/marvel/i/mg/b/70/50b515fa2e2ac/clean.jpg' alt=''/>
-            <h4>The Incredible Hulk</h4>
+        comics.slice(0, 12).map((comic: ComicProps) => (
+          <Comic key={comic.id}>
+            <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`} alt={comic.title} />
+            <h4>{comic.title}</h4>
           </Comic>
         ))
       }

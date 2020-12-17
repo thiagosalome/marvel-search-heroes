@@ -15,7 +15,7 @@ import useLocalStorage from 'src/hooks/useLocalStorage';
 import api from 'src/config/api';
 
 // Types
-import { CharacterProps } from './types'
+import { CharacterProps } from 'src/types/Character'
 
 // Styles
 import { TopBar, List, OrderBySelect, FavoritesButton, Toggle } from './styles';
@@ -86,7 +86,6 @@ const CharacterList: React.FC = () => {
     return <p>Carregando...</p>
   }
 
-  console.log('favorites', favorites)
   return (
     <>
       <MainSearch onChange={handleSearch} />
