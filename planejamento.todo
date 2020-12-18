@@ -25,20 +25,19 @@
 17/12/2020
   ✔ Desenvolvimento dos Requisitos Funcionais (Parte 2) @done (12/17/2020, 8:26:50 AM)
     ✔ Montar Busca interna @done (12/17/2020, 8:26:49 AM)
-  ☐ Desenvolvimento de Requisitos Bônus
+  ✔ Desenvolvimento de Requisitos Bônus @done (12/17/2020, 9:50:06 PM)
     ✔ Adicionar paginação a listagem para exibir além dos 20 personagens iniciais @done (12/17/2020, 8:34:09 PM)
     ✔ Persistir os dados de favoritos (para manter os dados após o reload da página) @done (12/15/2020, 10:06:08 PM)
     ✔ Layout responsivo @done (12/14/2020, 9:09:50 PM)
     ✔ Utilização de ES6+ @done (12/16/2020, 10:38:03 PM)
-    ☐ Utilização de ferramentas para garantir a qualidade do código (Eslint)
+    ✔ Utilização de ferramentas para garantir a qualidade do código (Eslint) @done (12/17/2020, 9:50:04 PM)
   
-  ☐ Outros Requisitos Bônus
+  ✔ Outros Requisitos Bônus @done (12/17/2020, 9:50:03 PM)
     ✔ Adicionar Loading @done (12/17/2020, 9:07:57 AM)
-    ☐ Adicionar mensagem de limite máximo de 5 favoritos
 
 18/12/2020
   ☐ Desenvolvimento de Requisitos Bônus
     ☐ Teste e2e
     ☐ CI/CD
   ☐ Disponibilizar projeto em uma URL pública
-  ☐ Montar documentação
+  ✔ Montar documentação @done (12/18/2020, 7:34:39 AM)
