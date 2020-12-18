@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/marvel-search-heroes/static/js/main.bb8790a7.chunk.js",
+    "main.js.map": "/marvel-search-heroes/static/js/main.bb8790a7.chunk.js.map",
+    "runtime-main.js": "/marvel-search-heroes/static/js/runtime-main.99b2f9ab.js",
+    "runtime-main.js.map": "/marvel-search-heroes/static/js/runtime-main.99b2f9ab.js.map",
+    "static/js/2.1148cd66.chunk.js": "/marvel-search-heroes/static/js/2.1148cd66.chunk.js",
+    "static/js/2.1148cd66.chunk.js.map": "/marvel-search-heroes/static/js/2.1148cd66.chunk.js.map",
+    "index.html": "/marvel-search-heroes/index.html",
+    "static/js/2.1148cd66.chunk.js.LICENSE.txt": "/marvel-search-heroes/static/js/2.1148cd66.chunk.js.LICENSE.txt",
+    "static/media/arrow-left.ae63d56c.svg": "/marvel-search-heroes/static/media/arrow-left.ae63d56c.svg",
+    "static/media/arrow-right.198d4705.svg": "/marvel-search-heroes/static/media/arrow-right.198d4705.svg",
+    "static/media/comic.0d28dfc3.svg": "/marvel-search-heroes/static/media/comic.0d28dfc3.svg",
+    "static/media/heart-outline.845f99f3.svg": "/marvel-search-heroes/static/media/heart-outline.845f99f3.svg",
+    "static/media/heart.33afdfb5.svg": "/marvel-search-heroes/static/media/heart.33afdfb5.svg",
+    "static/media/hero.a936fecd.svg": "/marvel-search-heroes/static/media/hero.a936fecd.svg",
+    "static/media/loading.87c8830c.gif": "/marvel-search-heroes/static/media/loading.87c8830c.gif",
+    "static/media/logo.75792130.svg": "/marvel-search-heroes/static/media/logo.75792130.svg",
+    "static/media/movies.f0c0903f.svg": "/marvel-search-heroes/static/media/movies.f0c0903f.svg",
+    "static/media/search.d23c8543.svg": "/marvel-search-heroes/static/media/search.d23c8543.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.99b2f9ab.js",
+    "static/js/2.1148cd66.chunk.js",
+    "static/js/main.bb8790a7.chunk.js"
+  ]
+}
