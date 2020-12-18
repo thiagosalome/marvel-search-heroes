@@ -5,7 +5,7 @@
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://thiagosalome.github.io/dragon-crypt/dist/" target="_blank"><img alt="Marvel Search Heroes" title="Marvel Search Heroes" src="https://img.shields.io/badge/Aplica%C3%A7%C3%A3o-DragonCrypt-FF1510" />
+  <a href="https://thiagosalome.github.io/marvel-search-heroes/" target="_blank"><img alt="Marvel Search Heroes" title="Marvel Search Heroes" src="https://img.shields.io/badge/Aplica%C3%A7%C3%A3o-Marvel Search Heroes-FF1510" />
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/thiagosalome/marvel-search-heroes?color=FF1510">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/thiagosalome/marvel-search-heroes?color=FF1510">
   <img alt="GitHub package.json version badge" src="https://img.shields.io/github/downloads/thiagosalome/marvel-search-heroes/total?color=FF1510">
