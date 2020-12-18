@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/marvel-search-heroes/static/js/main.bb8790a7.chunk.js",
-    "main.js.map": "/marvel-search-heroes/static/js/main.bb8790a7.chunk.js.map",
+    "main.js": "/marvel-search-heroes/static/js/main.35ddf6a1.chunk.js",
+    "main.js.map": "/marvel-search-heroes/static/js/main.35ddf6a1.chunk.js.map",
     "runtime-main.js": "/marvel-search-heroes/static/js/runtime-main.99b2f9ab.js",
     "runtime-main.js.map": "/marvel-search-heroes/static/js/runtime-main.99b2f9ab.js.map",
-    "static/js/2.1148cd66.chunk.js": "/marvel-search-heroes/static/js/2.1148cd66.chunk.js",
-    "static/js/2.1148cd66.chunk.js.map": "/marvel-search-heroes/static/js/2.1148cd66.chunk.js.map",
+    "static/js/2.29f4cae7.chunk.js": "/marvel-search-heroes/static/js/2.29f4cae7.chunk.js",
+    "static/js/2.29f4cae7.chunk.js.map": "/marvel-search-heroes/static/js/2.29f4cae7.chunk.js.map",
     "index.html": "/marvel-search-heroes/index.html",
-    "static/js/2.1148cd66.chunk.js.LICENSE.txt": "/marvel-search-heroes/static/js/2.1148cd66.chunk.js.LICENSE.txt",
+    "static/js/2.29f4cae7.chunk.js.LICENSE.txt": "/marvel-search-heroes/static/js/2.29f4cae7.chunk.js.LICENSE.txt",
     "static/media/arrow-left.ae63d56c.svg": "/marvel-search-heroes/static/media/arrow-left.ae63d56c.svg",
     "static/media/arrow-right.198d4705.svg": "/marvel-search-heroes/static/media/arrow-right.198d4705.svg",
     "static/media/comic.0d28dfc3.svg": "/marvel-search-heroes/static/media/comic.0d28dfc3.svg",
@@ -21,7 +21,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.99b2f9ab.js",
-    "static/js/2.1148cd66.chunk.js",
-    "static/js/main.bb8790a7.chunk.js"
+    "static/js/2.29f4cae7.chunk.js",
+    "static/js/main.35ddf6a1.chunk.js"
   ]
 }
