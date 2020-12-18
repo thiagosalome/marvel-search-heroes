@@ -115,7 +115,7 @@ const CharacterList: React.FC = () => {
       <List>
         {content}
       </List>
-      <Pagination numberPages={Math.ceil(total / limit)} limit={limit} setOffset={setOffset} />
+      { !showFavorites && <Pagination numberPages={Math.ceil(total / limit)} limit={limit} setOffset={setOffset} />}
     </>
   )
 }
