@@ -25,11 +25,13 @@ export const TopBar = styled.div`
   }
 `
 
-export const List = styled.div`
+export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin: 25px 0;
+  list-style: none;
+  padding: 0;
 
   @media (max-width: ${breakpoints.md}) {
     grid-template-columns: repeat(3, 1fr);

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import breakpoints from "src/styles/breakpoints";
 import { red, white, gray } from "src/styles/colors";
 
-export default styled.div`
+export default styled.li`
 
 a {
     text-decoration: none;

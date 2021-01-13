@@ -33,19 +33,22 @@ const CharacterList: React.FC = () => {
   const [ characters, setCharacters ] = useState<CharacterProps[]>([])
   const [ showFavorites, setShowFavorites ] = useState(false)
   const { favorites, setFavorites } = useContext(FavoritesContext)
-
   useEffect(() => {
     async function getCharacters() {
-      const { data } = await api.get('/characters', {
-        params: {
-          offset,
-          limit,
-          orderBy,
-          nameStartsWith: nameStartsWith ? nameStartsWith : null
-        }
-      })
-      setTotal(data.data.total)
-      setCharacters(data.data.results)
+      try {        
+        const { data } = await api.get('/characters', {
+          params: {
+            offset,
+            limit,
+            orderBy,
+            nameStartsWith: nameStartsWith ? nameStartsWith : null
+          }
+        })
+        setTotal(data.data.total)
+        setCharacters(data.data.results)
+      } catch (error) {
+        console.log(error.response);
+      }
     }
 
     getCharacters()

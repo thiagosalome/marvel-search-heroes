@@ -35,7 +35,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, set
       }
     }
   }
-
+  
   return (
     <CharacterItemStyle>
       <Link to={`/${character.id}`}>
