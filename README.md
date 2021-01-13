@@ -133,7 +133,7 @@ $ npm run start
 # Execute a aplicação em modo de teste
 $ npm run test
 
-# No terminal será mostrado um resultado como na imagem abaixo
+# No terminal será mostrado um resultado como abaixo
 
 PASS  src/__tests__/components/InternalSearch.test.tsx
 PASS  src/__tests__/components/MainSearch.test.tsx
