@@ -1,12 +1,14 @@
 import breakpoints from 'src/styles/breakpoints';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.ul`
   display: grid;
   column-gap: 35px;
   row-gap: 100px;
   grid-template-columns: repeat(6, 1fr);
   margin: 65px 0;
+  padding: 0;
+  list-style: none;
   
   @media (max-width: ${breakpoints.md}) {
     grid-template-columns: repeat(4, 1fr);
@@ -21,7 +23,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Comic = styled.div`
+export const Comic = styled.li`
 
   img {
     max-width: 100%;
