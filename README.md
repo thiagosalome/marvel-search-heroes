@@ -101,7 +101,7 @@ Para executar o projeto é necessário ter instalado as seguintes ferramentas:
   </tbody>
 </table>
 
-### Rodando aplicação web
+### Baixando e configurando aplicação
 
 ```bash
 # Clone este repositório
@@ -112,11 +112,12 @@ $ cd marvel-search-heroes
 
 # Instale as dependências
 $ npm install
+```
 
-# Crie um arquivo .env.development.local
-$ touch .env.development.local
+### Rodando aplicação web
 
-# Dentro do arquivo configure a variável de ambiente referente a apikey disponilizada pela api da Marvel em https://developer.marvel.com/
+```bash
+# Dentro do arquivo env.development troque o valor da variável de ambiente REACT_APP_API_KEY pela apikey disponilizada pela api da Marvel em https://developer.marvel.com/
 
 # REACT_APP_API_KEY=[sua chave de api]
 
@@ -125,6 +126,17 @@ $ npm run start
 
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
+
+### Rodando testes
+
+```bash
+# Execute a aplicação em modo de teste
+$ npm run test
+
+# No terminal será mostrado um resultado como na imagem abaixo
+```
+
+<img src="./.github/tests.png" alt="Tests" title="Tests">
 
 ## :memo: Licença
 
