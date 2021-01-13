@@ -134,9 +134,22 @@ $ npm run start
 $ npm run test
 
 # No terminal será mostrado um resultado como na imagem abaixo
-```
 
-<img src="./.github/tests.png" alt="Tests" title="Tests">
+PASS  src/__tests__/components/InternalSearch.test.tsx
+PASS  src/__tests__/components/MainSearch.test.tsx
+PASS  src/__tests__/components/ComicList.test.tsx
+PASS  src/__tests__/components/Footer.test.tsx
+PASS  src/__tests__/components/Pagination.test.tsx
+PASS  src/__tests__/components/CharacterList.test.tsx (5.771 s)
+
+Test Suites: 6 passed, 6 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        6.627 s
+Ran all test suites.
+
+Watch Usage: Press w to show more.
+```
 
 ## :memo: Licença
 
