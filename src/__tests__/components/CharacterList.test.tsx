@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { act } from 'react-dom/test-utils'
 
 // Components
 import CharacterList from 'src/components/CharacterList'
@@ -10,16 +9,16 @@ import App from "src/App"
 
 
 describe('Testing CharacterList', () => {
-  it('should loads and displays 24 heroes', async () => {
+  it('should loads and displays 20 heroes', async () => {
     render(
       <BrowserRouter>
         <CharacterList />
       </BrowserRouter>
     )
 
-    const liElements = await screen.findAllByRole('listitem', {})
+    const liElements = await screen.findAllByTestId('list-hero-item')
 
-    expect(liElements.length).toEqual(24)
+    expect(liElements.length).toEqual(20)
   })
 
   
@@ -54,24 +53,6 @@ describe('Testing CharacterList', () => {
     expect(headingElement).toBeTruthy()
   })
 
-  
-  it('should filtered by name', async () => {
-    render(
-      <BrowserRouter>
-        <CharacterList />
-      </BrowserRouter>
-    )
-
-    await act(async () => {
-      const inputElement = await screen.findByRole('textbox')
-      userEvent.type(inputElement, 'spider')
-    })
-
-    const headingElement = await screen.findAllByRole('heading', { name: /spider/i })
-
-    expect(headingElement).toBeTruthy()
-  })
-
   it('should favor a hero', async () => {
     render(<App />)
   
@@ -81,6 +62,21 @@ describe('Testing CharacterList', () => {
     const favorites = JSON.parse(window.localStorage.getItem('@msh/favorites') as string)
 
     expect(favorites.length).toBeGreaterThan(0)
+  })
+
+  it('should favor a maximum of 5 heroes', async () => {
+    render(<App />)
+  
+    const buttonElements = await screen.findAllByRole('button', { name: /favoritar/i })
+    userEvent.click(buttonElements[1])
+    userEvent.click(buttonElements[2])
+    userEvent.click(buttonElements[3])
+    userEvent.click(buttonElements[4])
+    userEvent.click(buttonElements[5])
+
+    const favorites = JSON.parse(window.localStorage.getItem('@msh/favorites') as string)
+
+    expect(favorites.length).toEqual(5)
   })
 
 
@@ -102,6 +98,6 @@ describe('Testing CharacterList', () => {
     
     const favorites = JSON.parse(window.localStorage.getItem('@msh/favorites') as string)
 
-    expect(favorites.length).toEqual(0)
+    expect(favorites.length).toEqual(4)
   })
 })

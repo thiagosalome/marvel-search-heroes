@@ -37,7 +37,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character, favorites, set
   }
   
   return (
-    <CharacterItemStyle>
+    <CharacterItemStyle data-testid='list-hero-item'>
       <Link to={`/${character.id}`}>
         <figure>
           <img src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}`} alt={character.name} />
