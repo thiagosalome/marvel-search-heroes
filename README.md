@@ -112,15 +112,15 @@ $ cd marvel-search-heroes
 
 # Instale as dependências
 $ npm install
+
+# Dentro do arquivo env.development troque o valor da variável de ambiente REACT_APP_API_KEY pela apikey disponilizada pela api da Marvel em https://developer.marvel.com/
+
+# REACT_APP_API_KEY=[sua chave de api]
 ```
 
 ### Rodando aplicação web
 
 ```bash
-# Dentro do arquivo env.development troque o valor da variável de ambiente REACT_APP_API_KEY pela apikey disponilizada pela api da Marvel em https://developer.marvel.com/
-
-# REACT_APP_API_KEY=[sua chave de api]
-
 # Execute a aplicação em modo de desenvolvimento
 $ npm run start
 
